@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Advisor - Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="left-side">
+            <h1 class="title">TRAVEL ADVISOR</h1>
+            <p class="subtitle">Discover amazing destinations and make unforgettable memories with Travel Advisor!</p>
+            <div class="illustration">
+                <img src="Screenshot 2024-11-07 at 11.58.21 AM.png" alt="Traveler illustration" />
+            </div>
+        </div>
+
+        <div class="right-side">
+            <h2>Create Your Account</h2>
+            <form id="signup-form" class="signup-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" placeholder="Enter your full name">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password">
+                
+                <button type="button" class="sign-up-button" onclick="signup()">Sign Up</button>
+                
+                <div class="links">
+                    <p>Already have an account? <a href="loginpage.html" class="login-link">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
