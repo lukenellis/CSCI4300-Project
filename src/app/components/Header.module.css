@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    background-color: #274690;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.airplaneIcon {
+    font-size: 24px;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header .logo {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.header .logout {
+    color: #fff;
+    text-decoration: none;
+}
