@@ -1,5 +1,13 @@
 import styles from "./AddItemForm.module.css"
 
+
+type Vacation = {
+    title: string;
+    location: string;
+    dates: string;
+}
+
+
 const AddItemForm = () => {
     return(
  

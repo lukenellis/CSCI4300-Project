@@ -1,14 +1,23 @@
 import VacationItem from "./VacationItem";
 import styles from "./Vacations.module.css"
 
-const Vacations = () => {
+type Vacation = {
+    title: string;
+    image: string;
+    location: string;
+    dates: string;
+}
 
-    const dummyArray = ["Item1", "Item2", "Item3"]
+type VacationArray = {
+    vacations: Vacation[];
+}
+
+const Vacations = ({ vacations }: VacationArray) => {
 
     return(
         <div className={styles.gridContainer}>
-            {dummyArray.map(() => (
-                <VacationItem />
+            {vacations.map((vacation) => (
+                <VacationItem vacation={vacation}/>
             ))}
         </div>
     );
