@@ -1,11 +1,17 @@
 import styles from "./AddItemForm.module.css"
+import { useItemsContext } from "../components/ItemsContext"
 
 
 type Vacation = {
     title: string;
+    image: string;
     location: string;
     dates: string;
 }
+
+const {vacations, setVacations} = useItemsContext()
+
+//Add submit handler "addItem" function here
 
 
 const AddItemForm = () => {

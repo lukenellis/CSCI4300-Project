@@ -1,16 +1,4 @@
-"use client"
-
-import Header from "../components/Header"
-import Vacations from "../components/Vacations"
-import AddItemButton from "../components/AddItemButton"
-import React, { useState } from "react"
-
-type Vacation = {
-    title: string;
-    image: string;
-    location: string;
-    dates: string;
-}
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 const initialArray: Vacation[] = [
     {
@@ -33,19 +21,27 @@ const initialArray: Vacation[] = [
     }
 ]
 
-export default function Dashboard() {
+const [vacations, setVacations] = useState(initialArray)
 
-    const [vacations, setVacations] = useState(initialArray)
+const ItemsContext = createContext({ vacations, setVacations });
 
-    const addVacation = (newVacation : Vacation) => {
-        setVacations((prevVacations) => [...prevVacations, newVacation])
-    }
-
-    return(
-        <div>
-            <Header />  
-            <Vacations vacations={ vacations }/>
-            <AddItemButton />
-        </div>
-    )
+type Vacation = {
+    title: string;
+    image: string;
+    location: string;
+    dates: string;
 }
+
+interface ContextProviderProps {
+    children: ReactNode;
+}
+
+
+
+export const ContextProvider = ({ children }: ContextProviderProps) => {
+    return (
+      <ItemsContext.Provider value={{ vacations, setVacations }} >
+        {children}
+      </ItemsContext.Provider>
+    );
+  };
