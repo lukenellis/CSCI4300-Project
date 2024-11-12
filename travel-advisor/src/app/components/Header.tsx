@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Header.module.css"
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
                 <p>ICON HERE</p>
                 <span className={styles.logo}>TravelAdvisor</span>
             </div>
-            <a href="./" className={styles.logout}>Log out</a>
+            <Link href="./" className={styles.logout}>Log out</Link>
         </header>
     )
 }
