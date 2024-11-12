@@ -1,34 +1,74 @@
-import styles from "./AddItemForm.module.css"
+import styles from "./AddItemForm.module.css";
 
-const AddItemForm = () => {
-    return(
- 
+const AddItemForm = ({ formData, handleInputChange }) => {
+    return (
         <div className={styles.formContainer}>
-
             <form className={styles.tripForm}>
                 <div className={styles.formGroup}>
-                    <label htmlFor="trip-name">Trip Name</label>
-                    <input type="text" id="trip-name" placeholder="Please enter a name" required />
-                    <small className={styles.errorMessage}>Please enter a name</small>
+                    <label htmlFor="title">Trip Name</label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        value={formData.title}
+                        onChange={handleInputChange}
+                        placeholder="Please enter a name"
+                        required
+                    />
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label htmlFor="destination">Destination</label>
-                    <input type="text" id="destination" placeholder="Type a location" />
+                    <label htmlFor="location">Destination</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        value={formData.location}
+                        onChange={handleInputChange}
+                        placeholder="Type a location"
+                    />
                 </div>
 
                 <div className={styles.formGroup}>
                     <label htmlFor="dates">Dates</label>
                     <div className={styles.dateGroup}>
-                        <div><p>From:</p><input type="date" id="start-date" /></div>
-                        <div><p>To:</p><input type="date" id="end-date" /></div>
+                        <div>
+                            <p>From:</p>
+                            <input
+                                type="date"
+                                id="start-date"
+                                name="dates"
+                                value={formData.dates}
+                                onChange={handleInputChange}
+                            />
+                        </div>
                     </div>
                 </div>
 
-                <button type="submit" className={styles.continueButton}>Continue</button>
-            </form>
-        </div> 
-    )
-}
+                <div className={styles.formGroup}>
+                    <label htmlFor="numTravelers"># of Travelers</label>
+                    <input
+                        type="number"
+                        id="numTravelers"
+                        name="numTravelers"
+                        value={formData.numTravelers}
+                        onChange={handleInputChange}
+                    />
+                </div>
 
-export default AddItemForm
+                <div className={styles.formGroup}>
+                    <label htmlFor="travelMethod">Method of Travel</label>
+                    <input
+                        type="text"
+                        id="travelMethod"
+                        name="travelMethod"
+                        value={formData.travelMethod}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default AddItemForm;

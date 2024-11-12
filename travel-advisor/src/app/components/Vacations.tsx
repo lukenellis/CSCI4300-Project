@@ -1,17 +1,22 @@
 import VacationItem from "./VacationItem";
-import styles from "./Vacations.module.css"
+import styles from "./Vacations.module.css";
 
-const Vacations = () => {
-
-    const dummyArray = ["Item1", "Item2", "Item3"]
-
-    return(
+const Vacations = ({ vacationItems }) => {
+    return (
         <div className={styles.gridContainer}>
-            {dummyArray.map(() => (
-                <VacationItem />
+            {vacationItems.map((item, index) => (
+                <VacationItem
+                    key={index}
+                    title={item.title}
+                    imageUrl={item.imageUrl}
+                    location={item.location}
+                    dates={item.dates}
+                    numTravelers={item.numTravelers}
+                    travelMethod={item.travelMethod}
+                />
             ))}
         </div>
     );
-}
+};
 
-export default Vacations
+export default Vacations;
