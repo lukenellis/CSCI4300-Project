@@ -4,6 +4,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
-    width: fit-content;
-    margin: 10px auto
+}
+
+.container h1 {
+    padding: 40px;;
+    font-size: 100px;
+}
+
+.container h2 {
+    margin-top: 10px;
 }

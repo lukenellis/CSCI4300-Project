@@ -1,3 +1,4 @@
+import AddItemButton from "./AddItemButton";
 import VacationItem from "./VacationItem";
 import styles from "./Vacations.module.css"
 
@@ -19,7 +20,9 @@ const Vacations = ({ vacations }: VacationArray) => {
             {vacations.map((vacation) => (
                 <VacationItem vacation={vacation}/>
             ))}
+            <AddItemButton />
         </div>
+        
     );
 }
 

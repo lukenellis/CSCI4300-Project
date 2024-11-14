@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+"use client"
+import React, { createContext, useState, ReactNode } from 'react';
 
 const initialArray: Vacation[] = [
     {
@@ -21,9 +22,6 @@ const initialArray: Vacation[] = [
     }
 ]
 
-const [vacations, setVacations] = useState(initialArray)
-
-const ItemsContext = createContext({ vacations, setVacations });
 
 type Vacation = {
     title: string;
@@ -36,12 +34,17 @@ interface ContextProviderProps {
     children: ReactNode;
 }
 
-
+export const ItemsContext = createContext<{
+    vacations: Vacation[];
+    setVacations: React.Dispatch<React.SetStateAction<Vacation[]>>;
+}>({ vacations: [], setVacations: () => {} });
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
+    const [vacations, setVacations] = useState(initialArray);
+
     return (
-      <ItemsContext.Provider value={{ vacations, setVacations }} >
+      <ItemsContext.Provider value={{ vacations, setVacations }}>
         {children}
       </ItemsContext.Provider>
     );
-  };
+};
