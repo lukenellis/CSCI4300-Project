@@ -1,0 +1,30 @@
+.leftSide {
+    background-color: #274690; /* Blue background */
+    color: #fff; /* White text */
+    width: 50%; /* Take up half the width */
+    height: 100%; /* Full height */
+    padding: 40px; /* Inner spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 40px; /* Larger title */
+    font-weight: bold;
+    margin-bottom: 15px; /* Add spacing below */
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 40px; /* Increase spacing */
+    line-height: 1.6; /* Adjust line spacing */
+}
+
+.illustration img {
+    width: 80%; /* Take up 80% of the container width */
+    max-width: 300px; /* Limit max size */
+    margin-top: 20px;
+}
