@@ -6,19 +6,19 @@ const initialArray: Vacation[] = [
         title: "21st Birthday Trip",
         image: "https://content.r9cdn.net/rimg/dimg/17/74/0ca6e469-city-30651-1632b88f203.jpg?width=1200&height=630&xhint=2635&yhint=1507&crop=true",
         location: "Miami, FL",
-        dates: "June 1st - June 3rd"
+        dates: "2024-6-1 to 2024-6-3"
     },
     {
         title: "Spring Break",
         image: "https://www.moonpalacecancun.com/small_sunrise-area-moon-palace-cancun_6417283d9f.webp",
         location: "Cancun, Mexico",
-        dates: "March 4th - March 8th"
+        dates: "2024-3-3 to 2024-3-8"
     },
     {
         title: "Winter Ski Trip",
         image: "https://jacksonhole-traveler-production.s3.amazonaws.com/wp-content/uploads/2014/11/jacksonhole-mountainresort-1280x601.jpg",
         location: "Jackson Hole, WY",
-        dates: "December 17th - December 20th"
+        dates: "2024-12-10 to 2024-12-20"
     }
 ]
 

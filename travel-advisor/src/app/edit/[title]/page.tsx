@@ -2,8 +2,9 @@
 import { useRouter } from "next/navigation";
 import { useContext, useState, useEffect } from "react";
 import { ItemsContext } from "../../components/ItemsContext";
-import styles from "../../components/AddItemForm.module.css";
+import styles from "./page.module.css"
 import { useParams } from "next/navigation";
+import Header from "@/app/components/Header";
 
 type Vacation = {
     title: string;
@@ -44,6 +45,9 @@ const EditItemForm = () => {
     };
 
     return (
+        <div className={styles.all}>
+        <Header />
+        <div className={styles.body}>
         <div className={styles.formContainer}>
 
         <form className={styles.tripForm} onSubmit={HandleSubmit}>
@@ -73,6 +77,8 @@ const EditItemForm = () => {
 
             <button type="submit" className={styles.continueButton}>Continue</button>
         </form>
+    </div>
+    </div>
     </div>
     );
 };
