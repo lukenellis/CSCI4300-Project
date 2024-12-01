@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "./VacationItem.module.css"
 import Link from "next/link";
+import { ItemsContext } from "./ItemsContext";
+import { useContext } from "react";
 
 const gridImg = {
     maxWidth: "100%",
@@ -25,8 +27,18 @@ const linkStyle = {
 };
 
 
-
 const VacationItem = ({vacation}:VacationProps) => {
+
+    const {vacations, setVacations} = useContext(ItemsContext)
+    const removeItem = () => {
+        const title = vacation.title
+        
+        const updatedVacations = vacations.filter((vacation) =>
+            vacation.title != title
+        );
+        setVacations(updatedVacations)
+    }
+
     return(
         <div className={styles.gridItem}>
             <h2>{vacation.title}</h2>
@@ -36,6 +48,7 @@ const VacationItem = ({vacation}:VacationProps) => {
             <Link href={`/edit/${vacation.title}`} passHref style={linkStyle}>
                 Edit
             </Link>
+            <p className={styles.delete} onClick={removeItem}>Delete</p>
         </div>
     )
 }

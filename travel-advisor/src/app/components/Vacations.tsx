@@ -17,8 +17,8 @@ const Vacations = ({ vacations }: VacationArray) => {
 
     return(
         <div className={styles.gridContainer}>
-            {vacations.map((vacation) => (
-                <VacationItem vacation={vacation}/>
+            {vacations.map((vacation, index) => (
+                <VacationItem key={index} vacation={vacation}/>
             ))}
             <AddItemButton />
         </div>
